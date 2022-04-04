@@ -6,7 +6,7 @@ ANCHORS = [
     [(0.28, 0.22), (0.38, 0.48), (0.9, 0.78)],[(0.07, 0.15), (0.15, 0.11), (0.14, 0.29)],
     [(0.02, 0.03), (0.04, 0.07), (0.08, 0.06)],
 ]  # these have been Normalized to be between [0, 1]
-CHECKPOINT = "E:\\group project\\vortex_framework\\data\\trained_models\\vision\\weights.pth.tar"
+CHECKPOINT = "E:\\group project\\grp_project\\vortex_framework\\data\\trained_models\\vision\\weights.pth.tar"
 R = [Image_Size // 32, Image_Size // 16, Image_Size // 8]
 ###################################################################################################
 ####################architecture config according to the YOLOv3 paper:#############################
