@@ -3,9 +3,13 @@ from sklearn.model_selection import train_test_split
 
 def train_dataset(df,dataset_parameters):
 
-    df = df.drop(['Unnamed: 0', 'Block Name', 'Point ID', 'CoordinateX', 
-                'Points_0','Points_1', 'Points_2', 'Points_Magnitude', 'Result_0', 'Result_1',
-        'Result_2', 'Result_Magnitude'], axis=1)
+    # df = df.drop(['Unnamed: 0', 'Block Name', 'Point ID', 'CoordinateX', 
+    #             'Points_0','Points_1', 'Points_2', 'Points_Magnitude', 'Result_0', 'Result_1',
+    #     'Result_2', 'Result_Magnitude'], axis=1)
+
+    df = df.drop(['Unnamed: 0', 'Point_ID', 'CoordinateX', 
+                'Points:0','Points:1', 'Points:2', 'Result:0', 'Result:1',
+        'Result:2', 'Time_Step'], axis=1)
 
     train_df, test_df = train_test_split(df, test_size=dataset_parameters.get('test_size'), random_state=1)
 

@@ -35,11 +35,13 @@ def CVMain(input_filename):
     ).to(Configration.DEVICE)
 
     # write the coordinates inside the smaller bounding circles to a file
-    bbox_array = plot_image(model, loader, 0.6, 0.5, scaled_anchors)
+    [bbox_array, img] = plot_image(model, loader, 0.6, 0.5, scaled_anchors)
     # print("initial yolo coords: ",bbox_array) # getting the yolo coords - check
     bbox_array = multi_yolo2rect(bbox_array, IMAGE_FILE_NP.shape)
+
+
     # print(len(bbox_array))
-    return len(bbox_array)
+    return len(bbox_array),bbox_array
     # print("transformed rect coords: ",bbox_array) # getting the rect coords - check
     # centers_radius_list = iterative_circle_square(bbox_array, 3)
     # # print("Circle centers radius list: ", centers_radius_list) # getting the circle centers and radius - check

@@ -30,6 +30,9 @@ def plot_image(model, loader, thresh, iou_thresh, anchors):
     image = x[0].permute(1,2,0).detach().cpu()
     """Plots predicted bounding boxes on the image"""
     im = np.array(image)
+    print("Datatype: ", im.dtype)
+
+    # im=im.astype('uint8')
     height, width, _ = im.shape
 
 
@@ -46,7 +49,7 @@ def plot_image(model, loader, thresh, iou_thresh, anchors):
         # print(box)
 
     # return the yolo format bboxes - x,y,w,h
-    return bbox_list
+    return [bbox_list,im]
 
 
 
